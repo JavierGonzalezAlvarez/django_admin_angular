@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------
-# Admin de Django en back, Api - DRF, Django 3.2 y Angular 11 (en curso)
+# Admin de Django en back, Api - DRF, Django 3.2 y Angular 11 (en desarrollo)
 ------------------------------------------------------------------------------
 # ENTORNO VIRTUAL
 -------------------------------------------------
@@ -15,7 +15,7 @@ esto crea una carpeta y dentro esta la carpeta /bin
 ## Activar entorno virtual
 source entorno_virtual/bin/activate
 
-# Desativar entorno virtual
+#v Desativar entorno virtual
 deactivate
 
 ## install requirements
@@ -54,17 +54,17 @@ mover a driectorio apps
 ## Hacer migraciones de tablas de la BBDD. Desde donde esta el fichero manage.py
 $ python manage.py makemigrations
 
-# desde el servidor ejecutamos collectstatic
+## desde el servidor ejecutamos collectstatic
 python3 manage.py collectstatic
 
-# desde servidor
+## desde servidor
 python3 manage.py makemigrations
 python manage.py makemigrations
 
 ## Para ver lo que se migra antes
 $ python manage.py showmigrations
 
-## Migrar a una base de datos especifica
+## Migrar a la base de datos
 $ python manage.py migrate
 
 ## crear usuario
@@ -113,35 +113,35 @@ https://.com/admin/login
 a@gmail.es
 weT43_%Pj
 
-# cargar django-admin pluggin
+#v cargar django-admin pluggin
 Se añade en requirements.txt
 django-admin-interface
 
-# postgres en pc linux
+## postgres en pc linux
 psql -h 127.0.0.1 -U postgres
 pss:
 
-# entrar en contenedor postgres
+## entrar en contenedor postgres
 psql -d apiadmin -U javier
 -ver la actividad de la bd
 SELECT * FROM pg_stat_activity WHERE datname='apiadmin';
 
-# borrar la db para hacer de nuevo migraciones, desde local (no docker)
+## borrar la db para hacer de nuevo migraciones, desde local (no docker)
 -entrar en postgres con otro usuario
 psql -d postgres -U javier
 DROP DATABASE "apiadmin";
 -crear la bd
 CREATE DATABASE apiadmin WITH OWNER javier;
 
-# exportar db
+## exportar db
 pg_dump -O --dbname=apiadmin://javier:2525_ap@postgresql.guebs.net:5432/apiadmin > dump.sql
 
 
-# ver tablas:
+## ver tablas:
 \dn+
 \dt *.*
 
-# dar permisos al usuario para las tablas
+## dar permisos al usuario para las tablas
 GRANT ALL ON SCHEMA public TO public;
 GRANT ALL ON ALL TABLES IN SCHEMA pg_catalog TO javier; 
 
@@ -150,3 +150,27 @@ ver campos de tablas
 listar valores de la tabla
 \d pg_database
 
+## override Admin Template y CSS
+------------------------------------
+entorno_virtual/lib/python3.8/site-packages/django/contrib/admin
+-admin
+-registration
+
+## cambiar css
+copiar fichero base.css en static/admin/css/base.css
+
+en fichero config.py indicar directorio 2static":
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+modificar algún color:
+base.css -> 
+a. #header
+    background: #228a4a;
+b. :root line 21
+--header-color:
+
+
+
+
+
+    

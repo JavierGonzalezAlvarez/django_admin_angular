@@ -26,7 +26,7 @@ if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
-admin.site.site_header = "Empresas"
+admin.site.site_header = "Empresas Promoción"
 admin.site.site_title = "Portal de Empresas"
-admin.site.index_title = "Gestión"
+admin.site.index_title = "Backend Admin"
 
