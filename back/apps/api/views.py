@@ -67,7 +67,7 @@ class CustomAuthToken(ObtainAuthToken):
 
 #ruta http://127.0.0.1:8000/v1/prueba
 def prueba(request):
-    return HttpResponse("Primer test")
+    return HttpResponse("Primer test de inicio aplicación api")
 
 #no se usa ahora
 #desde postman puedo hacer un get. he de meter el token
