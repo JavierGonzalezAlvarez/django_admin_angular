@@ -196,8 +196,6 @@ CORS_ORIGIN_WHITELIST = [
 ]
 
 #LOGIN
-#Una vez que entramos desde http://127.0.0.1:8000/login/ nos redirije la pagina home.html
-#Para ello decimos a donde debo redirigir una vez que entre
 #LOGIN_REDIRECT_URL = '/'
 LOGIN_REDIRECT_URL = '/admin'
 #LOGOUT_REDIRECT_URL = '/login/'

@@ -72,6 +72,10 @@ python manage.py createsuperuser
 javier
 89_Lp%wD
 
+o
+
+python manage.py createsuperuser --username=jga --email=javier@gmail.com
+
 ## Ejecutar el  servidor
 $ python manage.py runserver
 http://127.0.0.1:8000/
@@ -156,6 +160,7 @@ entorno_virtual/lib/python3.8/site-packages/django/contrib/admin
 -admin
 -registration
 
+# override ADMIN
 ## cambiar css
 copiar fichero base.css en static/admin/css/base.css
 
@@ -164,10 +169,23 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 modificar algún color:
 base.css -> 
+-linea 21
 a. #header
     background: #228a4a;
-b. :root line 21
+b. :root 
 --header-color:
+
+-linea 50
+  /* --default-button-bg: var(--secondary); */
+  --default-button-bg: #fa3503 ;
+
+## cambiar html
+copiar fichero base.html en templates/admin/base.html
+base.html
+-linea 43
+    {# añadir el email del usuario #}
+    - {{ user.email }} -                          
+
 
 
 
