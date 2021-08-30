@@ -1,0 +1,50 @@
+Welcome to django_admin's documentation!
+========================================
+
+This app has the back in Django 3.2 and the frrnt in Angular 11
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+Django 3.2:
+===========
+* Admin de Django
+* Overrides html y css
+* Sphinx
+
+.. figure:: /images/django-logo.png
+   :scale: 5%
+   :alt: django
+   :align: center
+
+Lengaje de programación Python_.
+
+.. _Python: http://www.python.org/ 
+
+
+Documentacion de Django_v.3.2_.
+
+.. _Django_v.3.2: https://www.djangoproject.com/
+
+Angular 11:
+===========
+* Componentes
+* Routing
+* Material Design
+
+.. figure:: /images/angular_logo.png
+   :scale: 20%
+   :alt: angular
+   :align: center
+
+.. admonition:: Importante
+
+   Angular es mantenido por Google
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

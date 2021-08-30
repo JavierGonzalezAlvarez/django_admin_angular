@@ -24,7 +24,7 @@ pip install -r requirements.txt
 ## crear proyecto
 django-admin startproject apimq
 
-## Configuramos el archivo settings 
+## Configuramos el archivo settings
 bd: apiadmin
 base de datos (crear antes)
 
@@ -186,6 +186,52 @@ base.html
     {# añadir el email del usuario #}
     - {{ user.email }} -                          
 
+
+## instalar sphinx en una carpeta creada
+$ mkdir docs
+$ cd docs
+$ docs\pip install sphinx
+- index.rst file
+- reStructuredText
+# configurar el proyecto con sphinx:
+preguntas para configurar sphinx
+$ docs/sphinx-quickstart
+- Separar directorios fuente y compilado (y/n) [n]: y
+- ...
+- Liberación del proyecto []: 0.1
+- Lenguaje del proyecto [en]: en
+
+crea:
+-conf.py
+-index.rst
+-Makefile
+
+# ingresar datos
+hacer los cambios de informacion en:
+docs/source/index.rst
+
+# crear directorio html, 
+docs\ $make html
+# install liveserver extension
+c docs\build\html\index.html
+# change the theme
+docs\ $ pip install sphinx_rtd_theme
+
+# source\config.py
+import sphinx_rtd_theme
+html_theme = 'sphinx_rtd_theme'
+
+cd docs\ $ make html
+docs\build\html\index.html
+
+Cada vez que se hacen cambios en  source\index.rst: hacemos
+docs\ $make html
+
+# modificar texto en source\index.rst. Documentación:
+https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
+https://docutils.sourceforge.io/docs/user/rst/quickref.html#hyperlink-targets
+crear directorio => source\images
+ie: Headings => ====
 
 
 
